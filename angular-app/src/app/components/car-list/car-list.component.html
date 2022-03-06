@@ -1,0 +1,50 @@
+<div class="blur">
+    <div>
+        <div class="row">
+            <div class="col-12">
+            <h1 class="title text-white">Car tracking app</h1>
+            <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+    <div *ngIf = "loading" class="fa-4x text-center">
+        <i class="fas fa-spinner fa-spin"></i>
+    </div>
+    <div *ngIf="!loading">
+        <div *ngIf="error">{{ error }}</div>
+        <div *ngIf="!error && cars.length">
+            <table class="table table-hover">
+            <thead>
+                <tr>
+                <th class="text-info">Driver's Name</th>
+                <th class="text-info">
+                    <select (change)="getFilteredList('Make', $event)" class="form-control">
+                        <option [ngValue]="null">Car Make</option>
+                        <option *ngFor='let filter of carMakeOptions' [value]="filter">{{filter}}</option>
+                    </select>
+                </th>
+                <th class="text-info">
+                    <select (change)="getFilteredList('Language', $event)" class="form-control">
+                    <option value="-">Language</option>
+                    <option *ngFor="let filter of driverlang" value="{{ filter }}">{{ filter }}</option>
+                    </select>
+                </th>
+                <th class="text-info">
+                    <select (change)="getFilteredList('Gender', $event)" class="form-control">
+                    <option value="-">Gender</option>
+                    <option *ngFor="let filter of genderOptions" value="{{ filter }}">{{ filter }}</option>
+                    </select>
+                </th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let car of cars" (click)="onClick(car)" [routerLink]="'/CarDetails'">
+                <td class="text-info">{{ car.driverName }}</td>
+                <td class="text-info">{{ car.carMake }}</td>
+                <td class="text-info">{{ car.driverLanguage === undefined ? 'NA' : car.driverLanguage }}</td>
+                <td class="text-info">{{ car.driverGender }}</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+    </div>
+</div>

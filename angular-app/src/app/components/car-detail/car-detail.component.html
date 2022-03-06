@@ -1,0 +1,30 @@
+<div class="bg"><div id="map" class="map-container"></div>
+    <div *ngIf="loading" class="fa-4x text-center">
+        <i class="fas fa-spinner fa-spin"></i>
+    </div>
+<div>
+
+    <div *ngIf="!loading">
+        <div *ngIf="error">{{ error }}</div>
+        <div *ngIf="!error">
+          <div class="row">
+            <div class="col-6">
+              <div>
+                <img class="card-img-top" src="">
+                <div class="card-body">
+                  <h5 class="card-title text-info"> <i class="bi bi-person-badge"></i> Name: {{ driverName }}</h5>
+                  <h5 class="card-title text-info">  <i class="bi bi-building"></i> City Origin: {{ car.driverCityOrigin }}</h5>
+                  <h5 class="card-title text-info"> <i class="bi bi-translate"></i> Speaks: {{ car.driverLanguage === undefined ? 'NA' : car.driverLanguage }}</h5>
+                  <h5 class="card-title text-info">  <i class="bi bi-phone"></i>Contact no: {{ car.driverPhone }}</h5>
+                  <h5 class="card-title text-info"> <i class="bi bi-person"></i> Gender: {{ car.driverGender }} </h5>
+                  <h5 *ngIf="isSelected" class="card-title text-info"> <i class="bi bi-patch-check"></i> Car make: {{ car.carMake }} </h5>
+                  <h5 *ngIf="isSelected" class="card-title text-info"> <i class="bi bi-speedometer"></i> Kms Driven: {{ car.kmDriven }} </h5>
+                  <button *ngIf="!isSelected" class="btn btn-primary" (click)="isSelected = !isSelected">View more</button>
+                  <button *ngIf="isSelected" class="btn btn-primary" (click)="isSelected = !isSelected">View less</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>    
+      </div>
+  </div>
