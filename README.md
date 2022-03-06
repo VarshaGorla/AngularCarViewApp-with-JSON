@@ -1,38 +1,3 @@
-# Kinexon Coding Challenge
-
-## What is this about?
-
-This challenge is part of the Kinexon interview process for frontend developers. It gives you the opportunity to show
-us your skills, interests, motivation and how you work in general.
-
-## What is included?
-
-### Back end
-
-We provide a backend written in Node.js. It serves a REST API containing data about some fictional car drivers. 
-The driver data includes a position (latitude, longitude) which is updated randomly every 5s.
-
-The backend is not particularly well-written because it was originally part of a different challenge destined for 
-backend developers. So please don't worry, our production code doesn't look like this :)
-
-
-### Front end
-
-On the front end side, we provide the scaffold of an empty but operational Angular application (in the `angular-app` 
-directory). You can either choose to use it and get started right away or build a front end from scratch using the 
-technologies you enjoy. For that you can use the `app` directory. The index.html file contained in it is served by the 
-provided backend.   
-Whether you use the Angular application or not, has no effect on the way 
-we appraise your code.
-
-In terms of content and features, you can build whatever you want as long as you use the data from the API. Get creative 
-and have fun. It is not expected that you build a lot of stuff and that everything is 100% polished. Simply try to give 
-us a glimpse of what we can expect from you.
-
-## How long should it take?
-The task is not time-boxed. You can invest as much time as you want and need to. Most candidates spend something between 
-two hours and one day depending on what they build.
-
 ## How to run the code?
 
 ### Prerequisites
